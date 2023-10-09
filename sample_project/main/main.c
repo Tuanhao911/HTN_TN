@@ -43,11 +43,6 @@ void app_main(void)
     GPIO_config.mode = GPIO_MODE_INPUT;               /*!< GPIO mode: set input/output mode                     */                                    
     gpio_config(&GPIO_config);
     gpio_set_direction(GPIO_NUM_16, GPIO_MODE_INPUT);
-    // for (int i = 0; i < 10; i++)
-    // {
-    //     printf("meo meo \n");
-    //     vTaskDelay(1000 / portTICK_PERIOD_MS);
-    // }
 
     while(1) {
         button();
