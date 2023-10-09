@@ -1,33 +1,57 @@
+
 #include <stdio.h>
-#include <inttypes.h>
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "esp_chip_info.h"
-#include "esp_flash.h"
+#include "esp_system.h"
+#include "esp_spi_flash.h"
 #include "driver/gpio.h"
-#include "esp_log.h"
 
+#define pinButton 16 // chan rx2
 
+uint8_t button_previous_state = 0;
 
-uint8_t signal = 0;
+// func
+    void button() {
+        uint8_t button_current_state = gpio_get_level(pinButton);
+    
+        if(button_current_state == 0 && button_previous_state == 1){
+             vTaskDelay(50 / portTICK_PERIOD_MS);
 
-void toggleButton () {
-    signal= gpio_get_level (GPIO_NUM_16);
-    if (signal == 1 ) {
-        printf("ESP32 \n");
-        return;
+            button_current_state = gpio_get_level(pinButton);
+            if(button_current_state == 0) {
+                printf("ESP32\n");
+            }  
+        }
+
+        button_previous_state = button_current_state;
     }
-    else return;
-}
+
+
+
+    void printMSSV() {
+        printf ("MSSV \n") ;
+        vTaskDelay (1000 / portTICK_PERIOD_MS) ;
+    }
+
+// main
 void app_main(void)
 {
+    gpio_config_t GPIO_config = {};
+
+    GPIO_config.pin_bit_mask = (1 << pinButton);       /*!< GPIO pin: set with bit mask, each bit maps to a GPIO */
+    GPIO_config.mode = GPIO_MODE_INPUT;               /*!< GPIO mode: set input/output mode                     */                                    
+    gpio_config(&GPIO_config);
     gpio_set_direction(GPIO_NUM_16, GPIO_MODE_INPUT);
-while (1) {
-    toggleButton();
-    // printf(signal);
-    printf ("MSSV \n") ;
-    vTaskDelay (1000) ;
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     printf("meo meo \n");
+    //     vTaskDelay(1000 / portTICK_PERIOD_MS);
+    // }
+
+    while(1) {
+        button();
+        printMSSV();
+    }
 }
-}
- 
+
