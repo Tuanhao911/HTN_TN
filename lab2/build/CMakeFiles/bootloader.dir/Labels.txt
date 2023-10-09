@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/CMakeFiles/bootloader
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/CMakeFiles/bootloader.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/CMakeFiles/bootloader-complete.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Learning/HTN_TN/Espressif/frameworks/esp-idf-v5.0.2/examples/get-started/sample_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
